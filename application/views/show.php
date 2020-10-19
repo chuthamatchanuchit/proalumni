@@ -45,7 +45,7 @@
                     <a class="nav-link" href="<?php echo site_url('page2/index') ?>">ลงทะเบียนศิษย์เก่า</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('page2/show') ?>">รายชื่อข้อมูลคนที่ลงทะเบียน</a>
+                    <a class="nav-link" href="<?php echo site_url('page2/show') ?>">รายชื่อศิษย์เก่าที่ลงทะเบียน</a>
                 </li>
             </ul>
 
@@ -66,6 +66,7 @@
 
                     <!--Menu-->
                     <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                        <a class="dropdown-item" href="<?php echo site_url('page2/profile') ?>">ตั้งค่าบัญชีส่วนตัว</a>
                         <a class="dropdown-item" href="<?php echo site_url('page2/logout') ?>">ออกจากระบบ</a>
                     </div>
                 </div>
@@ -86,21 +87,20 @@
         <div class="container  " align="center">
             <div class="card shadow" style="padding:20px;">
                 <p></p>
-                <h3><b><strong> ข้อมูลคนที่ลงทะเบียน </strong></b></h3>
+                <h3><b><strong> รายชื่อศิษย์เก่า </strong></b></h3>
                 <br>
                 <table border="1" id="dt-material-checkbox" class="table table-striped" cellspacing="0" width="100%">
                     <thead class="thead" style="background-color: #00CCCC ; color :white">
                         <tr>
-                            <th>
 
-                                <div align="center">รหัสนักศึกษา</div>
-
-                            </th>
                             <th>
                                 <div align="center">ชื่อ</div>
                             </th>
                             <th>
                                 <div align="center">นามสกุล</div>
+                            </th>
+                            <th>
+                                <div align="center">วัน/เดือน/ปีเกิด</div>
                             </th>
 
                         </tr>
@@ -108,13 +108,6 @@
 
                     <?php foreach ($query as $rs) { ?>
                         <tr align="center">
-                            <td>
-                                <z>
-                                    <div align="center">
-                                        <?php echo $rs->stu_id; ?>
-                                    </div>
-                                </z>
-                            </td>
                             <td>
                                 <z>
                                     <div align="center">
@@ -130,6 +123,15 @@
                                     </div>
                                 </z>
                             </td>
+                            <td>
+                                <z>
+                                    <div align="center">
+                                        <?php echo $rs->date; ?>
+
+                                    </div>
+                                </z>
+                            </td>
+
                         </tr>
                     <?php } ?>
                 </table>

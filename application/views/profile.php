@@ -24,23 +24,12 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <style>
-        h2 {
-            margin-top: 25%;
-
-        }
-
-        .active-cyan-2 input.form-control[type=text]:focus:not([readonly]) {
-            border-bottom: 1px solid #4dd0e1;
-            box-shadow: 0 1px 0 0 #4dd0e1;
-
-        }
-    </style>
 
 </head>
 
 
 <body>
+
 
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
@@ -92,68 +81,88 @@
     </nav>
     <!--/.Navbar -->
 
-
-
     <!-------------------------------------------------------------------------------------------------------------------------->
-    <br><br>
-    <!-- -------------------------------------------------------------------------------------------------------- -->
-    <div class="container ">
+    <br><br><br>
+    <div class="container">
+        <div class="card">
+            <!-- Default form register -->
+            <form class="text-center  border-dark p-5" action="<?php echo site_url('Page2/profile'); ?>" method="POST" align="center">
 
-        <div class="container  " align="center">
-            <div class="card shadow" style="padding:20px;">
-                <p></p>
-                <h3><b><strong> ข้อมูลคนที่ลงทะเบียน </strong></b></h3>
+
+
+                <h1>ลงทะเบียน</h1>
                 <br>
-                <table border="1" id="dt-material-checkbox" class="table table-striped" cellspacing="0" width="100%">
-                    <thead class="thead" style="background-color: #00CCCC ; color :white">
-                        <tr>
-                            <th>
-                                <div align="center">ชื่อ</div>
-                            </th>
-                            <th>
-                                <div align="center">นามสกุล</div>
-                            </th>
-                            <th>
-                                <div align="center">วัน/เดือน/ปีเกิด</div>
-                            </th>
+                <u>
+                    <h4 align="left">ข้อมูลส่วนตัว</h4>
+                </u>
+                <br>
+                <div class="modal-body" align="left">
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- E-mail -->
+                            <b> ชื่อ</b>&nbsp; <?php echo $this->session->userdata('name'); ?> &nbsp;&nbsp;
+                            <!-- password -->
+                            <b> นามสกุล</b>&nbsp; <?php echo $this->session->userdata('lastname'); ?> &nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <p></p>
 
-                        </tr>
-                    </thead>
+                    <div class="form-row">
+                        <div class="col">
+                            <b>เพศ </b>&nbsp; <?php echo $this->session->userdata('gender'); ?> &nbsp;&nbsp;
+                        </div>
+                        <div class="col">
+                            <!-- password -->
+                            <b>เลขประจำประชาชน</b>&nbsp; <?php echo $this->session->userdata('p_num'); ?> &nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <p></p>
 
-                    <?php foreach ($query as $rs) { ?>
-                        <tr align="center">
-                            <td>
-                                <z>
-                                    <div align="center">
-                                        <?php echo $rs->name; ?>
-                                    </div>
-                                </z>
-                            </td>
-                            <td>
-                                <z>
-                                    <div align="center">
-                                        <?php echo $rs->lastname; ?>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <!-- E-mail -->
+                            <b>วัน / เดือน / ปีเกิด</b>&nbsp; <?php echo $this->session->userdata('date'); ?> &nbsp;&nbsp;
+                        </div>
 
-                                    </div>
-                                </z>
-                            </td>
-                            <td>
-                                <z>
-                                    <div align="center">
-                                        <?php echo $rs->date; ?>
+                    </div>
+                    <p></p>
 
-                                    </div>
-                                </z>
-                            </td>
+                    <u>
+                        <h5 align="left">ข้อมูลการศึกษา</h5>
+                    </u>
+                    <br>
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <!-- password -->
+                            <b> ปีที่จบการศึกษา </b>&nbsp; <?php echo $this->session->userdata('s_pe'); ?> &nbsp;&nbsp;
+                        </div>
+                        <div class="col">
+                            <!-- E-mail -->
+                            <b> รหัสนักศึกษา </b>&nbsp; <?php echo $this->session->userdata('stu_id'); ?> &nbsp;&nbsp;
+                        </div>
+                        <div class="col">
+                            <!-- E-mail -->
+                            <b> รหัสล็อคอิน </b>&nbsp; <?php echo $this->session->userdata('password'); ?> &nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <br>
 
-                        </tr>
-                    <?php } ?>
-                </table>
+                </div>
 
 
-            </div>
+                <div class="b1" align="right">
+                    <a href="<?php echo site_url('page2/editprofile') ?>"><button type="button" class="btn peach-gradient ">แก้ไขข้อมูล</button></a>
+                </div>
+
+            </form>
+            <!-- Default form register -->
         </div>
     </div>
+    </div>
+    <br><br><br><br>
+
+
+
 </body>
 
 </html>

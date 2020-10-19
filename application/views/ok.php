@@ -50,7 +50,7 @@
                     <a class="nav-link" href="<?php echo site_url('page2/index') ?>">ลงทะเบียนศิษย์เก่า</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('page2/show') ?>">รายชื่อข้อมูลคนที่ลงทะเบียน</a>
+                    <a class="nav-link" href="<?php echo site_url('page2/show') ?>">รายชื่อศิษย์เก่าที่ลงทะเบียน</a>
                 </li>
             </ul>
 
@@ -71,6 +71,7 @@
 
                     <!--Menu-->
                     <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                        <a class="dropdown-item" href="<?php echo site_url('page2/profile') ?>">ตั้งค่าบัญชีส่วนตัว</a>
                         <a class="dropdown-item" href="<?php echo site_url('page2/logout') ?>">ออกจากระบบ</a>
                     </div>
                 </div>

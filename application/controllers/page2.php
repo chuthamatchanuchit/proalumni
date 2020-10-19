@@ -32,6 +32,8 @@ class Page2 extends CI_Controller
       'p_num' => $this->input->post("p_num"),
       'date' => $this->input->post("date"),
       's_pe' => $this->input->post("s_pe"),
+      'password' => $this->input->post("password"),
+
 
     );
 
@@ -101,7 +103,8 @@ class Page2 extends CI_Controller
     if ($this->input->post('stu_id')) {
       // echo 'test2';
       $stu_id = $this->input->post('stu_id');
-      $check = $this->Student->check_login($stu_id);
+      $password = $this->input->post('password');
+      $check = $this->Student->check_login($stu_id, $password);
 
       if ($check['message'] == true) {
         // echo 'test3';
@@ -129,5 +132,37 @@ class Page2 extends CI_Controller
     $search = $this->input->post('search');
     $data['query'] = $this->Student->model_search($search);
     $this->load->view('search', $data);
+  }
+
+  public function profile()
+  {
+    $this->load->view("profile");
+  }
+
+  public function editprofile()
+  {
+    $this->load->view("editprofile");
+  }
+
+  public function edit()
+  {
+    $data = array(
+
+      'stu_id' => $this->input->post("stu_id"),
+      'name' => $this->input->post("name"),
+      'lastname' => $this->input->post("lastname"),
+      'gender' => $this->input->post("gender"),
+      'p_num' => $this->input->post("p_num"),
+      'date' => $this->input->post("date"),
+      's_pe' => $this->input->post("s_pe"),
+      'password' => $this->input->post("password"),
+
+
+    );
+
+    $id = $this->input->post('id');
+    $this->session->set_userdata($data);
+    $this->Student->update($data, $id);
+    redirect('page2/profile');
   }
 }

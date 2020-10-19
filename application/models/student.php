@@ -32,10 +32,11 @@ class Student extends CI_Model
         return $query->result();
     }
 
-    function check_login($stu_id)
+    function check_login($stu_id, $password)
     {
         // $this->db->select('email,password');
         $this->db->where('stu_id', $stu_id);
+        $this->db->where('password', $password);
         $result = $this->db->get('profile');
         $message = '';
 
@@ -56,8 +57,14 @@ class Student extends CI_Model
 
     function model_search($search)
     {
-        $this->db->like('stu_id', $search);
+        $this->db->like('name', $search);
         $result = $this->db->get('profile');
         return $result->result();
+    }
+
+    function update($data, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('profile', $data);
     }
 }

@@ -52,7 +52,7 @@
                     <a class="nav-link" href="<?php echo site_url('page2/index') ?>">ลงทะเบียนศิษย์เก่า</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('page2/show') ?>">รายชื่อข้อมูลคนที่ลงทะเบียน</a>
+                    <a class="nav-link" href="<?php echo site_url('page2/show') ?>">รายชื่อศิษย์เก่าที่ลงทะเบียน</a>
                 </li>
             </ul>
 
@@ -73,6 +73,7 @@
 
                     <!--Menu-->
                     <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                        <a class="dropdown-item" href="<?php echo site_url('page2/profile') ?>">ตั้งค่าบัญชีส่วนตัว</a>
                         <a class="dropdown-item" href="<?php echo site_url('page2/logout') ?>">ออกจากระบบ</a>
                     </div>
                 </div>
@@ -85,7 +86,7 @@
     <!--/.Navbar -->
 
     <!-------------------------------------------------------------------------------------------------------------------------->
-    <br><br><br>
+    <br><br>
     <div class="container">
         <!-- Default form register -->
         <form class="text-center  border-dark p-5" action="<?php echo site_url('Page2/enroll'); ?>" method="POST">
@@ -123,9 +124,14 @@
                 <p></p>
 
                 <div class="form-row mb-4">
+
                     <div class="col">
-                        <label>เพศ </label>
-                        <input type="text" class="form-control" name="gender" id="gender">
+                        <label> เพศ </label>
+                        <select class="custom-select" id="gender" name="gender">
+                            <option selected disabled>เลือก...</option>
+                            <option value="หญิง">หญิง</option>
+                            <option value="ชาย">ชาย</option>
+                        </select>
                     </div>
                     <div class="col">
                         <!-- password -->
@@ -148,16 +154,20 @@
                 </u>
                 <br>
                 <div class="form-row mb-4">
-
+                    <div class="col">
+                        <!-- password -->
+                        <label> ปีที่จบการศึกษา </label>
+                        <input type="text" class="form-control" name="s_pe" id="s_pe">
+                    </div>
                     <div class="col">
                         <!-- E-mail -->
                         <label> รหัสนักศึกษา </label>
                         <input type="text" class="form-control" name="stu_id" id="stu_id" required>
                     </div>
                     <div class="col">
-                        <!-- password -->
-                        <label> ปีที่จบการศึกษา </label>
-                        <input type="text" class="form-control" name="s_pe" id="s_pe">
+                        <!-- E-mail -->
+                        <label> รหัสล็อคอิน </label>
+                        <input type="password" class="form-control" name="password" id="password">
                     </div>
                 </div>
                 <p></p>
