@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2020 at 05:06 PM
+-- Generation Time: Oct 19, 2020 at 05:53 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.22
 
@@ -43,9 +43,8 @@ INSERT INTO `cons` (`id`, `email`, `phone`, `facebook`, `line`) VALUES
 (1, 'nattacha.pantoey@gmail.com', '0984378180', 'Nattanicha Panpiemthong', 'nat.ta.ni.cha'),
 (2, 'nattacha.pantoey@gmail.com', '0984378180', 'Nattanicha Panpiemthong', 'nat.ta.ni.cha'),
 (3, 'man@gmail.com', '0895685475', 'mamamam', 'manny'),
-(10, '1@gmail.com', '1', '1', '1'),
-(11, '1@gmail.com', '1', '1', '1'),
-(12, 'waw@gmail.com', '0987654321', 'waw', 'waw');
+(12, 'waw@gmail.com', '0987654321', 'waw', 'waw'),
+(13, '614259012@webmail.npru.ac.th', '0984378180', 'nattanicha panpiemthong', 'nat.ta.ni.cha');
 
 -- --------------------------------------------------------
 
@@ -71,9 +70,8 @@ INSERT INTO `home` (`id`, `h_number`, `swine`, `h_dis`, `h_per`, `hpro`, `h_code
 (1, '136', '1', 'ห้วยม่วง', 'กำแพงแสน', 'นครปฐม', '73180'),
 (2, '136', '1', 'ห้วยม่วง', 'กำแพงแสน', 'นครปฐม', '73180'),
 (3, '136', '1', 'เตาอิด', 'กำแพงแสน', 'นครปฐม', '73180'),
-(10, '1', '1', '1', '1', '1', '1'),
-(11, '1', '1', '1', '1', '1', '1'),
-(12, '1', '1', 'สามง่าม', 'ดอนตูม', 'นครปฐม', '73150');
+(12, '1', '1', 'สามง่าม', 'ดอนตูม', 'นครปฐม', '73150'),
+(13, '136', '1', 'ห้วยม่วง', 'กำแพงแสน', 'นครปฐม', '73180');
 
 -- --------------------------------------------------------
 
@@ -89,18 +87,18 @@ CREATE TABLE `profile` (
   `gender` varchar(50) NOT NULL,
   `p_num` char(13) NOT NULL,
   `date` date NOT NULL,
-  `s_pe` int(11) NOT NULL
+  `s_pe` int(11) NOT NULL,
+  `password` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `profile`
 --
 
-INSERT INTO `profile` (`id`, `stu_id`, `name`, `lastname`, `gender`, `p_num`, `date`, `s_pe`) VALUES
-(1, 614259041, 'เมืองแมน', 'สระทองจีน', 'ตุ้ด', '123456789123', '2020-09-01', 2565),
-(12, 1, '1', '1', '1', '1', '0001-01-01', 1),
-(13, 1, '1', '1', '1', '1', '0001-01-01', 1),
-(14, 614259045, 'วันทนา', 'วันคำ', 'หญิง', '1234567890123', '2020-09-30', 2566);
+INSERT INTO `profile` (`id`, `stu_id`, `name`, `lastname`, `gender`, `p_num`, `date`, `s_pe`, `password`) VALUES
+(1, 614259041, 'เมืองแมน', 'สระทองจีน', 'ชาย', '123456789123', '2020-09-01', 2565, '12345678'),
+(14, 614259045, 'วันทนา', 'วันคำ', 'หญิง', '1234567890123', '2020-09-30', 2566, ''),
+(15, 614259012, 'ณัฎฐณิชา', 'ปั้นเปี่ยมทอง', '', '1700401319981', '2020-09-30', 2565, '123456');
 
 -- --------------------------------------------------------
 
@@ -127,9 +125,8 @@ CREATE TABLE `work` (
 INSERT INTO `work` (`id`, `w_name`, `w_code`, `w_mu`, `w_tum`, `w_per`, `w_por`, `w_pai`, `w_ps`) VALUES
 (1, 'ว่าง', '-', '-', '-', '-', '-', '-', 'ว่าง'),
 (2, 'ว่าง', '-', '-', '-', '-', '-', '-', 'ว่าง'),
-(9, '1', '1', '1', '1', '1', '1', '1', '1'),
-(10, '1', '1', '1', '1', '1', '1', '1', '1'),
-(11, 'ว่าง', '1', '1', 'สามง่าม', 'ดอนตูม', 'นครปฐม', '73150', 'ว่าง');
+(11, 'ว่าง', '1', '1', 'สามง่าม', 'ดอนตูม', 'นครปฐม', '73150', 'ว่าง'),
+(12, 'บ้านนนน', '136', '2', 'ท่าเสา', 'กำแพงแสน', 'นครปฐม', '73180', 'พนักงาน');
 
 --
 -- Indexes for dumped tables
@@ -167,25 +164,25 @@ ALTER TABLE `work`
 -- AUTO_INCREMENT for table `cons`
 --
 ALTER TABLE `cons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `home`
 --
 ALTER TABLE `home`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `work`
 --
 ALTER TABLE `work`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
