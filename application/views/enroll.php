@@ -52,7 +52,7 @@
                     <a class="nav-link" href="<?php echo site_url('page2/index') ?>">ลงทะเบียนศิษย์เก่า</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('page2/show') ?>">รายชื่อศิษย์เก่าที่ลงทะเบียน</a>
+                    <a class="nav-link" href="<?php echo site_url('page2/showall') ?>">รายชื่อศิษย์เก่าที่ลงทะเบียน</a>
                 </li>
             </ul>
 

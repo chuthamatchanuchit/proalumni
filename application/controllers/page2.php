@@ -85,11 +85,20 @@ class Page2 extends CI_Controller
     $this->load->view("ok");
   }
 
-  public function show()
+
+  public function showall()
   {
-    $data['query'] = $this->Student->show();
+    $data['query'] = $this->Student->showall();
     // print_r($data);
     $this->load->view("show", $data);
+  }
+
+  public function show()
+  {
+    $id = $this->session->userdata('id');
+    $data['query'] = $this->Student->show($id);
+    // print_r($data);
+    $this->load->view("profile", $data);
   }
 
   public function show_login()
@@ -111,8 +120,8 @@ class Page2 extends CI_Controller
         $array = json_decode(json_encode($check['data']), true);
         $this->session->set_userdata($array[0]);
 
-        $data['query'] = $this->Student->show();
-        redirect('page2/show', $data);
+        $data['query'] = $this->Student->showall();
+        redirect('page2/showall', $data);
         // $this->load->view('show', $data);
         // print_r($stu_id);
       } else {

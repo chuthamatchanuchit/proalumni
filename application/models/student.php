@@ -26,6 +26,22 @@ class Student extends CI_Model
         $this->db->insert('work', $data3);
     }
 
+    function showall()
+    {
+        // $result = $this->db->select('*')
+        //     ->from('profile')
+
+        //     ->join('home', 'home.id = profile.id')
+        //     ->join('cons', 'cons.id = profile.id')
+        //     ->join('work', 'work.id = profile.id')
+
+        //     ->where('profile.id')
+        //     ->get();
+        // return $result;
+        $query = $this->db->get('profile');
+        return $query;
+    }
+
     function show($id)
     {
         $result = $this->db->select('*')
@@ -92,7 +108,7 @@ class Student extends CI_Model
     function update2($data2, $id)
     {
         $this->db->where('id', $id);
-        $this->db->update('cons', $data2);
+        $this->db->update('con', $data2);
     }
 
     function update3($data3, $id)
