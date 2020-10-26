@@ -88,7 +88,7 @@
             <!-- Default form register -->
             <form class="text-center  border-dark p-5" action="<?php echo site_url('Page2/edit'); ?>" method="POST">
 
-                <h1>ลงทะเบียน</h1>
+                <h1>แก้ไขข้อมูลส่วนตัว</h1>
 
                 <br>
                 <u>
@@ -149,6 +149,11 @@
                         <div class="col">
                             <!-- E-mail -->
                             <label> รหัสนักศึกษา </label>
+                            <input type="text" class="form-control" name="session" id="session" required value="<?php echo $this->session->userdata('session'); ?>">
+                        </div>
+                        <div class="col">
+                            <!-- E-mail -->
+                            <label> รหัสนักศึกษา </label>
                             <input type="text" class="form-control" name="stu_id" id="stu_id" required value="<?php echo $this->session->userdata('stu_id'); ?>">
                         </div>
                         <div class="col">
@@ -159,21 +164,178 @@
                     </div>
                     <p></p>
 
+                    <?php foreach ($query->result_array() as $data) { ?>
+                        <p></p>
+                        <br>
+                        <u>
+                            <h5 align="left">ที่อยู่ตามทะเบียนบ้าน</h5>
+                        </u>
+                        <br>
+
+                        <div class="form-row mb-4">
+                            <div class="col ">
+                                <!-- E-mail -->
+                                <label> บ้านเลขที่ </label>
+                                <input type="text" id="h_number" name="h_number" class="form-control" value="<?php echo $data['h_number']; ?>">
+                            </div>
+                            <div class="col">
+                                <!-- password -->
+                                <label> หมู่ที่ </label>
+                                <input type="text" id="swine" name="swine" class="form-control" value="<?php echo $data['swine']; ?>">
+                            </div>
+                        </div>
+                        <p></p>
+
+                        <div class="form-row mb-4">
+                            <div class="col">
+                                <!-- E-mail -->
+                                <label> ตำบล </label>
+                                <input type="text" id="h_dis" name="h_dis" class="form-control" value="<?php echo $data['h_dis']; ?>">
+                            </div>
+                            <div class="col">
+                                <!-- password -->
+                                <label> อำเภอ </label>
+                                <input type="text" id="h_per" name="h_per" class="form-control" value="<?php echo $data['h_per']; ?>">
+                            </div>
+                        </div>
+                        <p></p>
+
+                        <div class="form-row mb-4">
+                            <div class="col-6">
+                                <!-- E-mail -->
+                                <label> จังหวัด </label>
+                                <input type="text" class="form-control" name="hpro" id="hpro" value="<?php echo $data['hpro']; ?>">
+                            </div>
+                            <div class="col-6">
+                                <!-- E-mail -->
+                                <label> รหัสไปรษณีย์ </label>
+                                <input type="text" id="h_code" name="h_code" class="form-control" value="<?php echo $data['h_code']; ?>">
+                            </div>
+                        </div>
+
+
+
                 </div>
 
+                <br>
+                <u>
+                    <h4 align="left">ข้อมูลการติดต่อ</h4>
+                </u>
+                <br>
+                <div class="modal-body" align="left">
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <!-- E-mail -->
+                            <label> E-mail </label>
+                            <input type="email" name="email" id="email" class="form-control" value="<?php echo $data['email']; ?>" required>
+                        </div>
+                        <div class=" col">
+                            <!-- password -->
+                            <label> เบอร์โทรศัพท์ </label>
+                            <input type="text" name="phone" id="phone" class="form-control" value="<?php echo $data['phone']; ?>">
+                        </div>
+                    </div>
+                    <p></p>
+                    <div class=" form-row mb-4">
+                        <div class="col">
+                            <!-- E-mail -->
+                            <label> Facebook </label>
+                            <input type="text" name="facebook" id="facebook" class="form-control" value="<?php echo $data['facebook']; ?>" required>
+                        </div>
+                        <div class=" col">
+                            <!-- password -->
+                            <label> ID Line </label>
+                            <input type="text" name="line" id="line" class="form-control" value="<?php echo $data['line']; ?>" required>
+                        </div>
+                    </div>
+                    <p></p>
 
 
+                </div>
+                <p></p>
+
+                <br>
+                <u>
+                    <h4 align=" left">ข้อมูลการทำงาน</h4>
+                </u>
+                <br>
+                <div class="modal-body" align="left">
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <label> ตำแหน่งการทำงาน </label>
+                            <input type="text" id="w_ps" name="w_ps" class="form-control" value="<?php echo $data['w_name']; ?>" required>
+                        </div>
+                        <div class="col">
+                            <label> สถานที่ทำงาน </label>
+                            <input type="text" id="w_name" name="w_name" class="form-control" value="<?php echo $data['w_code']; ?>">
+                        </div>
+
+                    </div>
+                    <p></p>
+                    <br>
+                    <u>
+                        <h5 align="left">ที่ติดต่อที่ทำงาน</h5>
+                    </u>
+                    <br>
+
+                    <div class="form-row mb-4">
+                        <div class="col ">
+                            <!-- E-mail -->
+                            <label> บ้านเลขที่ </label>
+                            <input type="text" id="w_code" name="w_code" class="form-control" value="<?php echo $data['w_mu']; ?>">
+                        </div>
+                        <div class="col">
+                            <!-- password -->
+                            <label> หมู่ที่ </label>
+                            <input type="text" id="w_mu" name="w_mu" class="form-control" value="<?php echo $data['w_tum']; ?>">
+                        </div>
+                    </div>
+                    <p></p>
+
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <!-- E-mail -->
+                            <label> ตำบล </label>
+                            <input type="text" id="w_tum" name="w_tum" class="form-control" value="<?php echo $data['w_per']; ?>">
+                        </div>
+                        <div class="col">
+                            <!-- password -->
+                            <label> อำเภอ </label>
+                            <input type="text" id="w_per" name="w_per" class="form-control" value="<?php echo $data['w_por']; ?>">
+                        </div>
+                    </div>
+                    <p></p>
+
+                    <div class="form-row mb-4">
+                        <div class="col-6">
+                            <!-- E-mail -->
+                            <label> จังหวัด </label>
+                            <input type="text" class="form-control" name="w_por" id="w_por" value="<?php echo $data['w_pai']; ?>">
+                        </div>
+                        <div class="col-6">
+                            <!-- E-mail -->
+                            <label> รหัสไปรษณีย์ </label>
+                            <input type="text" id="w_pai" name="w_pai" class="form-control" value="<?php echo $data['w_ps']; ?>">
+                        </div>
+
+                    </div>
+                    <p></p>
+
+                <?php } ?>
+                </div>
+                <br><br>
                 <div class="btn1" align="right">
                     <!-- Sign up button -->
                     <input type=" " name="id" value="<?php echo $this->session->userdata('id'); ?>" hidden>
                     <button type="submit" class="btn btn-default btn-block">ตกลง</button>
                 </div>
+
             </form>
-            <!-- Default form register -->
         </div>
+        <!-- Default form register -->
     </div>
-    </div>
-    <br><br><br><br>
+
+    <br><br>
 
 
 

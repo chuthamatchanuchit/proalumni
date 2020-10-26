@@ -32,8 +32,8 @@ class Page2 extends CI_Controller
       'p_num' => $this->input->post("p_num"),
       'date' => $this->input->post("date"),
       's_pe' => $this->input->post("s_pe"),
+      'session' => $this->input->post("session"),
       'password' => $this->input->post("password"),
-
 
     );
 
@@ -136,12 +136,18 @@ class Page2 extends CI_Controller
 
   public function profile()
   {
-    $this->load->view("profile");
+    $id = $this->session->userdata('id');
+    $data['query'] = $this->Student->show($id);
+
+    $this->load->view("profile", $data);
   }
 
   public function editprofile()
   {
-    $this->load->view("editprofile");
+    $id = $this->session->userdata('id');
+    $data['query'] = $this->Student->show($id);
+
+    $this->load->view("editprofile", $data);
   }
 
   public function edit()
@@ -155,14 +161,48 @@ class Page2 extends CI_Controller
       'p_num' => $this->input->post("p_num"),
       'date' => $this->input->post("date"),
       's_pe' => $this->input->post("s_pe"),
+      'session' => $this->input->post("session"),
       'password' => $this->input->post("password"),
 
+    );
+
+    $data1 = array(
+
+      'h_number' => $this->input->post("h_number"),
+      'swine' => $this->input->post("swine"),
+      'h_dis' => $this->input->post("h_dis"),
+      'h_per' => $this->input->post("h_per"),
+      'hpro' => $this->input->post("hpro"),
+      'h_code' => $this->input->post("h_code"),
+    );
+
+    $data2 = array(
+
+      'email' => $this->input->post("email"),
+      'phone' => $this->input->post("phone"),
+      'facebook' => $this->input->post("facebook"),
+      'line' => $this->input->post("line"),
+    );
+
+    $data3 = array(
+
+      'w_ps' => $this->input->post("w_ps"),
+      'w_name' => $this->input->post("w_name"),
+      'w_code' => $this->input->post("w_code"),
+      'w_mu' => $this->input->post("w_mu"),
+      'w_tum' => $this->input->post("w_tum"),
+      'w_per' => $this->input->post("w_per"),
+      'w_por' => $this->input->post("w_por"),
+      'w_pai' => $this->input->post("w_pai"),
 
     );
 
     $id = $this->input->post('id');
-    $this->session->set_userdata($data);
+    $this->session->set_userdata($data, $data1, $data2, $data3);
     $this->Student->update($data, $id);
+    $this->Student->update1($data1, $id);
+    $this->Student->update2($data2, $id);
+    $this->Student->update3($data3, $id);
     redirect('page2/profile');
   }
 }

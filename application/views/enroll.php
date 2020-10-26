@@ -161,6 +161,11 @@
                     </div>
                     <div class="col">
                         <!-- E-mail -->
+                        <label> หมู่เรียน </label>
+                        <input type="text" class="form-control" name="session" id="session" required>
+                    </div>
+                    <div class="col">
+                        <!-- E-mail -->
                         <label> รหัสนักศึกษา </label>
                         <input type="text" class="form-control" name="stu_id" id="stu_id" required>
                     </div>
@@ -342,9 +347,6 @@
                 <a href="">Forgot password?</a>
             </div>
             <p></p>
-            <!-- Social register -->
-            <p>or sign up with:</p>
-
 
 
             <a href="https://web.facebook.com/" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>

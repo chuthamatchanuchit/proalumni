@@ -101,7 +101,7 @@
                                 <!--Body-->
                                 <div class="md-form mb-5">
                                     <input type="text" name="stu_id" id="stu_id" class="form-control validate">
-                                    <label data-error="wrong" data-success="right">Student_ID</label>
+                                    <label for="materialLoginFormStudentID">Student_ID</label>
                                 </div>
                                 <!-- Password -->
                                 <div class="md-form">

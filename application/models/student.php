@@ -26,10 +26,18 @@ class Student extends CI_Model
         $this->db->insert('work', $data3);
     }
 
-    function show()
+    function show($id)
     {
-        $query = $this->db->get('profile');
-        return $query->result();
+        $result = $this->db->select('*')
+            ->from('profile')
+
+            ->join('home', 'home.id = profile.id')
+            ->join('cons', 'cons.id = profile.id')
+            ->join('work', 'work.id = profile.id')
+
+            ->where('profile.id', $id)
+            ->get();
+        return $result;
     }
 
     function check_login($stu_id, $password)
@@ -57,7 +65,14 @@ class Student extends CI_Model
 
     function model_search($search)
     {
-        $this->db->like('name', $search);
+        $this->db->like('stu_id', $search);
+        $this->db->or_like('name', $search);
+        $this->db->or_like('s_pe', $search);
+        $this->db->or_like('session', $search);
+        $this->db->or_like('hpro', $search);
+
+        $this->db->join('home', 'home.id = profile.id');
+
         $result = $this->db->get('profile');
         return $result->result();
     }
@@ -66,5 +81,23 @@ class Student extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->update('profile', $data);
+    }
+
+    function update1($data1, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('home', $data1);
+    }
+
+    function update2($data2, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('cons', $data2);
+    }
+
+    function update3($data3, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('work', $data3);
     }
 }
