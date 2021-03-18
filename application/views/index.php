@@ -41,7 +41,7 @@
 
 
 <body>
-
+   
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +51,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('page2/show_index') ?>">SE-NPRU</a>
+                    <a class="nav-link" href="<?php echo site_url('page2/show_index') ?>">Software engineer</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url('page2/index') ?>">ลงทะเบียนศิษย์เก่า</a>
@@ -87,25 +87,29 @@
             <?php } else { ?> <a class="nav-link" style="color: white;" href="<?php echo site_url('page2/show_login') ?>">Login</a>
             <?php } ?>
         </div>
+        
+
+
 
 
     </nav>
     <!--/.Navbar -->
 
-
+    
 
     <!-------------------------------------------------------------------------------------------------------------------------->
-
+    
     <!-- Search form -->
     <div class="container">
 
     </div>
-
+    
     <div class="container" align="center">
         <b>
             <h2>ระบบลงทะเบียนศิษย์เก่า สาขาวิศวกรรมซอฟต์แวร์</h2>
         </b>
     </div>
+    
 </body>
 
 </html>

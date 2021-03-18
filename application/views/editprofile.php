@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('page2/show_index') ?>">SE-NPRU</a>
+                    <a class="nav-link" href="<?php echo site_url('page2/show_index') ?>">Software engineer</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url('page2/index') ?>">ลงทะเบียนศิษย์เก่า</a>

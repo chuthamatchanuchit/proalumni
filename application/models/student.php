@@ -108,7 +108,7 @@ class Student extends CI_Model
     function update2($data2, $id)
     {
         $this->db->where('id', $id);
-        $this->db->update('con', $data2);
+        $this->db->update('cons', $data2);
     }
 
     function update3($data3, $id)

@@ -51,7 +51,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('page2/show_index') ?>">SE-NPRU</a>
+                    <a class="nav-link" href="<?php echo site_url('page2/show_index') ?>">Software engineer</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url('page2/index') ?>">ลงทะเบียนศิษย์เก่า</a>
@@ -102,7 +102,7 @@
         <div class="container  " align="center">
             <div class="card shadow" style="padding:20px;">
                 <p></p>
-                <h3><b><strong> ข้อมูลคนที่ลงทะเบียน </strong></b></h3>
+                <h3><b><strong id="nameregister"> ข้อมูลคนที่ลงทะเบียน </strong></b></h3>
                 <br>
                 <table border="1" id="dt-material-checkbox" class="table table-striped" cellspacing="0" width="100%">
                     <thead class="thead" style="background-color: #00CCCC ; color :white">
@@ -124,7 +124,7 @@
                         <tr align="center">
                             <td>
                                 <z>
-                                    <div align="center">
+                                    <div id="name" align="center">
                                         <?php echo $rs->name; ?>
                                     </div>
                                 </z>
@@ -139,7 +139,7 @@
                             </td>
                             <td>
                                 <z>
-                                    <div align="center">
+                                    <div id="year" align="center">
                                         <?php echo $rs->date; ?>
 
                                     </div>

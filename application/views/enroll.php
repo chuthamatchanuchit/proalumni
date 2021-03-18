@@ -46,7 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('page2/show_index') ?>">SE-NPRU</a>
+                    <a class="nav-link" href="<?php echo site_url('page2/show_index') ?>">Software engineer</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url('page2/index') ?>">ลงทะเบียนศิษย์เก่า</a>
@@ -79,7 +79,7 @@
                 </div>
                 <!--/Dropdown primary-->
 
-            <?php } else { ?> <a class="nav-link" style="color: white;" href="<?php echo site_url('page2/show_login') ?>">Login</a>
+            <?php } else { ?> <a class="nav-link" style="color: #FFCCCC;" href="<?php echo site_url('page2/show_login') ?>">Login</a>
             <?php } ?>
         </div>
     </nav>
@@ -89,9 +89,9 @@
     <br><br>
     <div class="container">
         <!-- Default form register -->
-        <form class="text-center  border-dark p-5" action="<?php echo site_url('Page2/enroll'); ?>" method="POST">
+        <form class="text-center  border-dark p-5" action="<?php echo site_url('./Page2/enroll'); ?>" method="POST">
 
-            <h1>ลงทะเบียน</h1>
+            <h1 id="registername">ลงทะเบียน</h1>
 
             <br>
             <u>
