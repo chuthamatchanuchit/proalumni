@@ -40,8 +40,8 @@ CREATE TABLE `cons` (
 --
 
 INSERT INTO `cons` (`id`, `email`, `phone`, `facebook`, `line`) VALUES
-(1, 'kong@gmail.com', '0867557933', 'Siwakorn Ramraueng', 'kong eiei'),
-(2, 'kon@gmail.com', '0984562145', 'kon kiki', 'kon eiei');
+(1, 'jam@gmail.com', '0885693402', 'poramin jumprom', 'jamm jung'),
+(2, 'taii@gmail.com', '0984038567', 'Taii chanuchit', 'Tai eiei');
 
 -- --------------------------------------------------------
 
